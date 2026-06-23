@@ -46,15 +46,13 @@ It should not flood the group, over-participate, or create more work than it sav
 
 ### 2. Live where the team already works
 
-The first target is the existing WhatsApp group.
+The first target is our existing WhatsApp group.
 
 The team is open to moving to Telegram or Slack if needed, but WhatsApp is the most natural starting point and may be useful to many other small teams.
 
 ### 3. Open source by default
 
 Everything should be open source wherever possible.
-
-The current WhatsApp bot infrastructure was built by Yaniv. One early task is to talk with him and check whether we can open-source the current infrastructure or build an open-source equivalent with his help.
 
 ### 4. Files over black-box state
 
