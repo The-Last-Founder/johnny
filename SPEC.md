@@ -321,6 +321,10 @@ Future Johnny may participate in the podcast as a documented part of the open-so
 
 This is not core to the MVP, but it supports the broader community and movement.
 
+#### 6. Bi-directional WhatsApp ↔ CoFounder.co sync
+
+Bi-directional WhatsApp group ↔ CoFounder.co integration: messages to Johnny sync to the mapped CoFounder.co project, and CoFounder.co replies/updates sync back to the originating WhatsApp thread.
+
 ## Open decisions
 
 ### Platform
