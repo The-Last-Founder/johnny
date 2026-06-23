@@ -85,7 +85,7 @@ It should start as a quiet, useful, versioned memory and coordination layer for 
 | 0.4 | Richer file and artifact support |
 | 1.0 | More autonomous AI teammate |
 
-See [Spec.md](./Spec.md) for the detailed roadmap.
+See [SPEC.md](./SPEC.md) for the detailed roadmap.
 
 ## Success picture
 
