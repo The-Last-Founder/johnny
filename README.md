@@ -27,12 +27,12 @@ Small teams often lose operational momentum.
 Current problems we want Johnny to solve:
 
 - Balls get dropped.
-- There is no shared task board.
+- We aren't using any shared task board.
 - Actions and projects are not consistently captured.
-- It is hard to know what was decided.
+- It is hard to know what was decided, and what is blocked.
 - It is hard to know what is important now.
 - People miss context when they are offline.
-- Group attention is fragile and should not be abused.
+- Group attention and momentum is fragile and should not be abused.
 
 Johnny should first solve these problems before becoming more ambitious.
 
