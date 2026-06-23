@@ -2,9 +2,9 @@
 
 Johnny is an open-source AI teammate for small teams.
 
-It lives where the team already communicates, starting with a group chat, and helps the team stay aligned without creating noise. Johnny understands project context, remembers decisions, maintains useful artifacts, and helps each person focus on what matters.
+- It lives where the team already communicates, starting with a Whatsapp group chat, and helps the team stay aligned without creating noise. Johnny understands project context, remembers decisions, maintains useful artifacts, and helps each person focus on what matters.
 
-This project is also a pilot for something bigger: learning how to build with state-of-the-art AI tools in public, and growing an open-source community that builds useful AI tools together.
+- This project is also a pilot for [something bigger](https://github.com/The-Last-Founder/Build): learning how to build with state-of-the-art AI tools in public, and growing an open-source community that builds useful AI tools together.
 
 ## Why are we building this?
 
@@ -12,12 +12,13 @@ We are building Johnny for three reasons:
 
 1. **Build the product**  
    Build Johnny as a useful AI teammate that helps small teams communicate, remember, decide, and execute.
+   We are into dogfooding - the first team Johnny will help, is us!
 
 2. **Learn the new AI-native workflow**  
-   Learn how to use modern AI development tools such as Claude Code, co-founder-style tools, OpenClaw, Hermes-like agents, and other emerging workflows.
+   Learn how to use modern AI development tools such as Claude Code, [cofounder.co](https://cofounder.co/), [Paperclip](https://paperclip.ing/) etc. as well as OpenClaw, Hermes-like agents, and other emerging workflows.
 
 3. **Build an open-source movement**  
-   Use Johnny as the first pilot for a broader community that builds AI tools together. The process should be documented publicly, including through The Last Founder podcast, so others can learn, contribute, and eventually build additional tools with us.
+   Use Johnny as the first pilot for a broader community that builds AI tools together. The process should be documented publicly, including through [The Last Founder podcast](http://thelastfounder.com/), so others can learn, contribute, and eventually build additional tools with us.
 
 ## The pain
 
