@@ -8,7 +8,7 @@ For the clean Johnny repo, the recommended initial structure is:
 
 ```text
 README.md
-Spec.md
+SPEC.md
 ```
 
 Later, once Johnny starts maintaining its own state, add:
