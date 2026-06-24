@@ -4,7 +4,7 @@ Johnny is an open-source AI teammate for small teams.
 
 - It lives where the team already communicates, starting with a Whatsapp group chat, and helps the team stay aligned without creating noise. Johnny understands project context, remembers decisions, maintains useful artifacts, and helps each person focus on what matters.
 
-- This project is also a pilot for [something bigger](https://github.com/The-Last-Founder/Build): learning how to build with state-of-the-art AI tools in public, and growing an open-source community that builds useful AI tools together.
+- This project is also a pilot for [something bigger](https://github.com/The-Last-Founder/Build): learning how to build with state-of-the-art AI tools in public, and growing an open-source community that builds useful AI tools together. [Join the Community via Whatsapp](https://chat.whatsapp.com/DgKpG63438y8N7D3pHJ57t)
 
 ## Why are we building this?
 
