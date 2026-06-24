@@ -8,7 +8,7 @@ For the clean Johnny repo, the recommended initial structure is:
 
 ```text
 README.md
-SPEC.md
+Spec.md
 ```
 
 Later, once Johnny starts maintaining its own state, add:
@@ -27,8 +27,9 @@ memory/
 | Version | Focus | Included |
 |---|---|---|
 | 0.2 | Basic useful team memory | Group chat, Markdown config, project scope, shared task list, on-demand summaries, weekly summary, basic boundaries |
-| 0.3 | Personal interaction and lightweight files | One-on-one chats, personal task filtering, reminders, reading text and Markdown files, better bootstrapping |
+| 0.3 | Personal interaction, lightweight files, and basic security | One-on-one chats, personal task filtering, reminders, reading text and Markdown files, better bootstrapping, whitelist-based command permissions |
 | 0.4 | Richer file and artifact support | PDFs, voice transcripts, more boards, wiki layer exploration |
+| 0.5 | Security review and hardening | Threat model, prompt-injection review, permission boundaries, safer command execution |
 | 1.0 | Agentic teammate | Task extraction, suggestions, smart routing, stronger agent backend, podcast participation |
 
 ## Johnny 0.2: MVP
@@ -216,7 +217,27 @@ Possible behavior:
 - Johnny batches reminders when possible.
 - Johnny avoids repeated nagging.
 
-#### 4. Reading basic text files
+#### 4. Basic whitelist security
+
+Johnny should only execute commands or respond to approved team members.
+
+For the initial team, approved users are:
+
+- Ron
+- Sharon
+- Alice
+
+Users should be recognized by phone number, not by display name.
+
+Minimum behavior:
+
+- Johnny may read group context as needed.
+- Johnny should only respond to whitelisted phone numbers.
+- Johnny should only execute commands from whitelisted phone numbers.
+- Johnny should ignore or softly reject commands from anyone else.
+- The risk of prompt injection from non-whitelisted messages that Johnny can still read is explicitly left open for deeper security review in 0.5.
+
+#### 5. Reading basic text files
 
 Johnny should be able to read simple text or Markdown files uploaded or linked by the team.
 
@@ -229,7 +250,7 @@ This should include:
 
 PDFs and voice recordings are not included in 0.3.
 
-#### 5. Better project bootstrapping
+#### 6. Better project bootstrapping
 
 Johnny should support a more intentional setup flow.
 
@@ -248,6 +269,14 @@ It can ask the team questions, then generate or update:
 
 Johnny should be able to read and summarize PDFs relevant to the project.
 
+Use cases:
+
+- Uploaded documents.
+- Specs.
+- Research.
+- Notes.
+- Reports.
+
 #### 2. Voice transcript support
 
 Johnny should eventually handle voice recordings uploaded to chat.
@@ -258,6 +287,8 @@ Possible flow:
 2. Audio is transcribed.
 3. Johnny extracts useful context.
 4. Johnny updates relevant artifacts if asked.
+
+This may be especially useful for teams that think out loud or work asynchronously.
 
 #### 3. More artifact types
 
@@ -275,6 +306,47 @@ Johnny can expand beyond tasks into additional structured files:
 Obsidian or a similar Markdown-based wiki may sit on top of the GitHub files.
 
 This is not required for 0.2, but the file structure should keep it possible.
+
+## Johnny 0.5: Security review and hardening
+
+Johnny 0.5 should turn the basic whitelist into a more explicit security model.
+
+### 0.5 goals
+
+- Understand the main attack vectors.
+- Reduce prompt-injection risk.
+- Define clear permission boundaries.
+- Make command execution safer before adding more autonomy.
+
+### 0.5 features
+
+#### 1. Threat model
+
+Document the main risks for a WhatsApp-based AI teammate.
+
+Examples:
+
+- Non-whitelisted users trying to influence Johnny indirectly.
+- Prompt injection through messages Johnny reads but should not obey.
+- Malicious or accidental instructions inside uploaded files.
+- Confusion between conversation context and trusted commands.
+- Unauthorized updates to GitHub-backed memory files.
+
+#### 2. Permission model
+
+Define which users can do what.
+
+At minimum:
+
+- Who can ask Johnny questions.
+- Who can create or edit tasks.
+- Who can update project memory.
+- Who can trigger scheduled or external actions.
+- Who can change Johnny’s behavior config.
+
+#### 3. Safer command execution
+
+Before Johnny becomes more autonomous, define which actions require confirmation, logging, or human review.
 
 ## Johnny 1.0: More autonomous AI teammate
 
@@ -321,10 +393,6 @@ Future Johnny may participate in the podcast as a documented part of the open-so
 
 This is not core to the MVP, but it supports the broader community and movement.
 
-#### 6. Bi-directional WhatsApp ↔ CoFounder.co sync
-
-Bi-directional WhatsApp group ↔ CoFounder.co integration: messages to Johnny sync to the mapped CoFounder.co project, and CoFounder.co replies/updates sync back to the originating WhatsApp thread.
-
 ## Open decisions
 
 ### Platform
@@ -365,6 +433,14 @@ Decide how Johnny writes to GitHub:
 - Separate branch per change.
 
 Early default should probably be conservative.
+
+### Security model
+
+Open questions:
+
+- Can non-whitelisted messages still influence Johnny through prompt injection if Johnny reads them as context?
+- Should Johnny fully ignore non-whitelisted messages, or read them as untrusted context?
+- What actions require explicit confirmation even from whitelisted users?
 
 ### Autonomy level
 
